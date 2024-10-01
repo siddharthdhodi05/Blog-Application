@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { useDispatch} from "react-redux"
-import authservice from "./appwrite/auth";
+import { useDispatch} from "react-redux";
+import authService from "./appwrite/auth";
 import { login,logout } from "./store/authSlice";
 import { Footer, Header } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
-  console.log(import.meta.env.VITE_APPWRITE_URL);
   
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
   const dispatch = useDispatch()
 
   useEffect(() => {
-    authservice.getCurrentUser()
+    authService.getCurrentUser()
     .then((userData) =>{
       if (userData) {
         dispatch(login(userData))
@@ -29,7 +28,7 @@ function App() {
       <div className=" w-full block">
         <Header />
         <main>
-          todo : {/*<Outlet></Outlet>*/}
+          todo : {<Outlet></Outlet>}
         </main>
         <Footer />
       </div>
