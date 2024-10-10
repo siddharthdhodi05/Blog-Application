@@ -3,6 +3,7 @@ import Header from "./Header/Header";
 import Container from "./Container/Container";
 import Logo from "./Logo";
 import LogoutBtn from "./Header/LogoutBtn";
+import RTE from "./RTE";
 
 
-export {Footer, Header, Container, Logo, LogoutBtn}
+export {Footer, Header, Container, Logo, LogoutBtn, RTE}
